@@ -2,8 +2,8 @@ require('dotenv').config()
 
 const knexConfig = require('./knexfile')[process.env.ENV];
 const db = require('knex')(knexConfig)
-
-db('usersTemp1').then(data => console.log('users: ', data)).catch(err => console.log(err.message))
+// db('usersTemp').insert({ username: 'Lee' }).then(data => console.log(data.rowCount)).catch(err => console.log(err.message))
+db('usersTemp').then(data => console.log('users: ', data)).catch(err => console.log(err.message))
 
 const express = require('express')
 const app = express()
